@@ -15,14 +15,26 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <!-- PERUBAHAN: Bootstrap 5.3 dan Bootstrap Icons ditambahkan sesuai modul. -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <header class="site-header" id="beranda">
-      <nav class="nav-shell" aria-label="Navigasi utama">
+      <!-- PERUBAHAN: Navbar Bootstrap dengan collapse hamburger untuk layar kecil. -->
+      <nav class="navbar navbar-expand-lg nav-shell" aria-label="Navigasi utama">
         <a
-          class="brand"
+          class="brand navbar-brand"
           href="#beranda"
           aria-label="Joice Anastasya Napitupulu, kembali ke beranda"
         >
@@ -30,15 +42,29 @@
           <span class="brand-subtitle">information systems</span>
         </a>
 
-        <ul class="nav-links">
-          <li><a href="#karya">Karya</a></li>
-          <li><a href="#pengalaman">Pengalaman</a></li>
-          <li>
-            <a class="nav-cta" href="#layanan">
-              Hubungi saya <span aria-hidden="true">↗</span>
-            </a>
-          </li>
-        </ul>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Buka navigasi"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="nav-links navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#karya">Karya</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pengalaman">Pengalaman</a></li>
+            <li class="nav-item">
+              <a class="nav-link nav-cta" href="#kontak">
+                Hubungi saya <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -94,65 +120,110 @@
           </p>
         </div>
 
-        <div class="projects-grid">
-          <article class="project-item">
-            <div class="project-visual visual-rose">
+        <!-- PERUBAHAN: Grid Bootstrap 12 kolom dan empat project card responsif. -->
+        <div class="projects-grid row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <article class="project-item col">
+            <div class="card project-card h-100">
+              <div class="project-visual visual-rose card-img-top">
               <span>01</span>
               <strong>SRS <br />(CIS IT Del)</strong>
-            </div>
-            <div class="project-details">
-              <p>AI Web App • 2026</p>
-              <h3>System Requirement
-Specification (CIS IT Del)</h3>
-              <a class="inline-link" href="#kontak">
-                Lihat proyek <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </article>
-
-          <article class="project-item">
-            <div class="project-visual visual-gray">
-              <span>02</span>
-              <strong>clinic<br />system</strong>
-            </div>
-            <div class="project-details">
-              <p>Java + PostgreSQL • 2026</p>
-              <h3>DEL Clinic Management System</h3>
-              <a class="inline-link" href="https://github.com/JoiceNapitupulu/DEL-clinic">
-                Lihat proyek <span aria-hidden="true">↗</span>
-              </a>
+              </div>
+              <div class="project-details card-body">
+                <div><span class="badge project-badge">AI Web App</span> <span class="project-year">2026</span></div>
+                <h3 class="card-title">System Requirement Specification (CIS IT Del)</h3>
+                <p class="card-text">Analisis kebutuhan sistem untuk membangun pengalaman digital akademik yang terarah.</p>
+                <button class="inline-link project-action" type="button" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                  Lihat proyek <span aria-hidden="true">↗</span>
+                </button>
+              </div>
             </div>
           </article>
 
-          <article class="project-item">
-            <div class="project-visual visual-dark">
-              <span>03</span>
-              <strong>PerisaiKita</strong>
-            </div>
-            <div class="project-details">
-              <p>UI/UX Research • 2026</p>
-              <h3>Perisaikita</h3>
-              <a class="inline-link" href="https://drive.google.com/file/d/1HuULg5ztId6VCWB49q5Sfj-wrU2f4khf/view">
-                Lihat proyek <span aria-hidden="true">↗</span>
-              </a>
+          <article class="project-item col">
+            <div class="card project-card h-100">
+              <div class="project-visual visual-gray card-img-top">
+                <span>02</span>
+                <strong>clinic<br />system</strong>
+              </div>
+              <div class="project-details card-body">
+                <div><span class="badge project-badge">Java + PostgreSQL</span> <span class="project-year">2026</span></div>
+                <h3 class="card-title">DEL Clinic Management System</h3>
+                <p class="card-text">Aplikasi manajemen klinik yang membantu pengelolaan data pasien dan layanan.</p>
+                <a class="inline-link project-action" href="https://github.com/JoiceNapitupulu/DEL-clinic" target="_blank" rel="noreferrer">
+                  Lihat proyek <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
           </article>
 
-          <article class="project-item">
-            <div class="project-visual visual-rose">
-              <span>04</span>
-              <strong>Sora</strong>
+          <article class="project-item col">
+            <div class="card project-card h-100">
+              <div class="project-visual visual-dark card-img-top">
+                <span>03</span>
+                <strong>PerisaiKita</strong>
+              </div>
+              <div class="project-details card-body">
+                <div><span class="badge project-badge">UI/UX Research</span> <span class="project-year">2026</span></div>
+                <h3 class="card-title">Perisaikita</h3>
+                <p class="card-text">Rancangan aplikasi jadwal imunisasi dengan fokus pada kebutuhan keluarga.</p>
+                <button class="inline-link project-action" type="button" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                  Lihat proyek <span aria-hidden="true">↗</span>
+                </button>
+              </div>
             </div>
-            <div class="project-details">
-              <p>UX Design • 2025</p>
-              <h3>Sora (Samosir E-Boat)</h3>
-              <a class="inline-link" href="https://drive.google.com/drive/folders/1zecq4nNbnulWlVDqeFnLNH7jEF9EErlM">
-                Lihat proyek <span aria-hidden="true">↗</span>
-              </a>
+          </article>
+
+          <article class="project-item col">
+            <div class="card project-card h-100">
+              <div class="project-visual visual-rose card-img-top">
+                <span>04</span>
+                <strong>Sora</strong>
+              </div>
+              <div class="project-details card-body">
+                <div><span class="badge project-badge">UX Design</span> <span class="project-year">2025</span></div>
+                <h3 class="card-title">Sora (Samosir E-Boat)</h3>
+                <p class="card-text">Eksplorasi pengalaman pengguna untuk layanan transportasi wisata di Samosir.</p>
+                <a class="inline-link project-action" href="https://drive.google.com/drive/folders/1zecq4nNbnulWlVDqeFnLNH7jEF9EErlM" target="_blank" rel="noreferrer">
+                  Lihat proyek <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
           </article>
         </div>
       </section>
+
+      <!-- PERUBAHAN: Dua modal Bootstrap dengan konten detail proyek yang berbeda. -->
+      <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="projectModal1Label">SRS (CIS IT Del)</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+            </div>
+            <div class="modal-body">
+              <p>Proyek ini berfokus pada analisis kebutuhan dan dokumentasi sistem untuk membantu proses pengembangan produk digital.</p>
+              <span class="badge project-badge">AI Web App</span>
+              <span class="badge project-badge">System Analysis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="projectModal2Label">Perisaikita</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+            </div>
+            <div class="modal-body">
+              <p>Perisaikita adalah konsep aplikasi jadwal imunisasi yang dirancang melalui riset pengguna, prototyping, dan pengujian usability.</p>
+              <span class="badge project-badge">UI/UX Research</span>
+              <span class="badge project-badge">Prototype</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section class="skills section-shell" aria-labelledby="skills-title">
         <div class="section-header compact-heading">
@@ -275,7 +346,7 @@ Specification (CIS IT Del)</td>
         </ol>
       </section>
 
-      <section class="contact section-shell" id="layanan" aria-labelledby="contact-title">
+      <section class="contact section-shell" id="kontak" aria-labelledby="contact-title">
         <div class="contact-summary">
           <p class="section-label">04 / GET IN TOUCH</p>
           <h2 id="contact-title">
@@ -289,68 +360,59 @@ Specification (CIS IT Del)</td>
           </p>
         </div>
 
-        <form class="contact-form" action="#" method="post">
+        <!-- PERUBAHAN: Form Bootstrap memakai floating labels, input groups, dan validasi visual. -->
+        <form class="contact-form needs-validation" action="#" method="post" novalidate>
           <fieldset>
             <legend>Data diri</legend>
 
             <div class="form-columns">
               <div class="field-group">
-                <label for="nama">
-                  Nama lengkap <span aria-hidden="true">*</span>
-                </label>
-                <input
-                  id="nama"
-                  name="nama"
-                  type="text"
-                  autocomplete="name"
-                  placeholder="Nama kamu"
-                  required
-                />
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-person" aria-hidden="true"></i></span>
+                  <div class="form-floating">
+                    <input id="nama" name="nama" type="text" class="form-control" autocomplete="name" placeholder="Nama kamu" required />
+                    <label for="nama">Nama lengkap *</label>
+                    <div class="invalid-feedback">Nama lengkap wajib diisi.</div>
+                  </div>
+                </div>
               </div>
 
               <div class="field-group">
-                <label for="email">
-                  Email <span aria-hidden="true">*</span>
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  placeholder="nama@email.com"
-                  aria-describedby="email-help"
-                  required
-                />
-                <small id="email-help">Saya akan membalas melalui email ini.</small>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-envelope" aria-hidden="true"></i></span>
+                  <div class="form-floating">
+                    <input id="email" name="email" type="email" class="form-control" autocomplete="email" placeholder="nama@email.com" required />
+                    <label for="email">Email *</label>
+                    <div class="invalid-feedback">Masukkan alamat email yang valid.</div>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="form-columns">
               <div class="field-group">
-                <label for="telepon">
-                  Nomor telepon <span aria-hidden="true">*</span>
-                </label>
-                <input
-                  id="telepon"
-                  name="telepon"
-                  type="tel"
-                  autocomplete="tel"
-                  placeholder="08xxxxxxxxxx"
-                  required
-                />
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-telephone" aria-hidden="true"></i></span>
+                  <div class="form-floating">
+                    <input id="telepon" name="telepon" type="tel" class="form-control" autocomplete="tel" placeholder="08xxxxxxxxxx" required />
+                    <label for="telepon">Nomor telepon *</label>
+                    <div class="invalid-feedback">Nomor telepon wajib diisi.</div>
+                  </div>
+                </div>
               </div>
 
               <div class="field-group">
-                <label for="topik">
-                  Topik kolaborasi <span aria-hidden="true">*</span>
-                </label>
-                <select id="topik" name="topik" required>
-                  <option value="" selected disabled>Pilih topik</option>
-                  <option value="uiux">UI / UX Design</option>
-                  <option value="web">Web Development</option>
-                  <option value="ai">AI Product / Research</option>
-                  <option value="intern">Internship / Magang</option>
-                </select>
+                <div class="form-floating">
+                  <select id="topik" name="topik" class="form-select" required>
+                    <option value="" selected disabled>Pilih topik</option>
+                    <option value="uiux">UI / UX Design</option>
+                    <option value="web">Web Development</option>
+                    <option value="ai">AI Product / Research</option>
+                    <option value="intern">Internship / Magang</option>
+                  </select>
+                  <label for="topik">Topik kolaborasi *</label>
+                  <div class="invalid-feedback">Pilih topik kolaborasi.</div>
+                </div>
               </div>
             </div>
           </fieldset>
@@ -358,18 +420,20 @@ Specification (CIS IT Del)</td>
           <fieldset>
             <legend>Detail proyek</legend>
             <div class="field-group">
-              <label for="pesan">
-                Ceritakan kebutuhanmu <span aria-hidden="true">*</span>
-              </label>
-              <textarea
-                id="pesan"
-                name="pesan"
-                rows="5"
-                placeholder="Saya sedang mencari partner untuk ..."
-                required
-              ></textarea>
+              <div class="form-floating">
+                <textarea id="pesan" name="pesan" class="form-control" placeholder="Saya sedang mencari partner untuk ..." style="height: 130px" required></textarea>
+                <label for="pesan">Ceritakan kebutuhanmu *</label>
+                <div class="invalid-feedback">Detail proyek wajib diisi.</div>
+              </div>
             </div>
           </fieldset>
+
+          <!-- PERUBAHAN: Checkbox persetujuan ditambahkan sebagai syarat pengiriman form. -->
+          <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" id="persetujuan" required />
+            <label class="form-check-label" for="persetujuan">Saya menyetujui informasi ini digunakan untuk keperluan komunikasi.</label>
+            <div class="invalid-feedback">Persetujuan diperlukan sebelum mengirim pesan.</div>
+          </div>
 
           <button class="button button-dark" type="submit">
             Kirim pesan <span aria-hidden="true">↗</span>
@@ -403,5 +467,23 @@ Specification (CIS IT Del)</td>
 
       <p class="copyright">© 2026 Joice Anastasya Napitupulu</p>
     </footer>
+
+    <!-- PERUBAHAN: Bootstrap JavaScript Bundle mengaktifkan navbar collapse dan modal. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- PERUBAHAN: Validasi form Bootstrap tanpa dependensi tambahan. -->
+    <script>
+      (() => {
+        "use strict";
+        document.querySelectorAll(".needs-validation").forEach((form) => {
+          form.addEventListener("submit", (event) => {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add("was-validated");
+          });
+        });
+      })();
+    </script>
   </body>
 </html>

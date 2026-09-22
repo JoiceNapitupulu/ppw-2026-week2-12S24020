@@ -6,6 +6,7 @@
   padding: 0;
 }
 
+/* PERUBAHAN BOOTSTRAP: File ini adalah custom override yang dimuat setelah Bootstrap CSS. */
 :root {
   --paper: #fbfaf8;
   --white: #fff;
@@ -27,6 +28,8 @@ body {
   color: var(--ink);
   font-family: "Manrope", sans-serif;
   line-height: 1.6;
+  /* PERUBAHAN: Mencegah tabel minimum-width membuat halaman mobile melebar. */
+  overflow-x: hidden;
 }
 
 a {
@@ -672,6 +675,244 @@ textarea {
   .project-card,
   .button {
     transition: none;
+  }
+}
+
+/* PERUBAHAN BOOTSTRAP: Variabel tema custom menggantikan tampilan default Bootstrap. */
+:root {
+  --primary-brand: #a96f7a;
+  --primary-hover: #84515d;
+  --surface-bg: #fbfaf8;
+  --surface-raised: #ffffff;
+  --card-radius: 4px;
+  --shadow-lift: 0 16px 30px rgba(37, 35, 38, 0.12);
+  --focus-ring: 0 0 0 0.2rem rgba(169, 111, 122, 0.25);
+  --section-space: clamp(72px, 10vw, 120px);
+}
+
+/* PERUBAHAN BOOTSTRAP: Override .card untuk project card, hover, focus-within, dan pseudo-element. */
+.project-card {
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.project-card::before {
+  background: var(--primary-brand);
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-6px);
+}
+
+.project-card:hover::before,
+.project-card:focus-within::before {
+  transform: scaleX(1);
+}
+
+.project-card .card-title {
+  color: var(--ink);
+  font: 600 27px/1.05 "Cormorant Garamond", serif;
+  margin: 13px 0 8px;
+}
+
+.project-card .card-text {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.project-badge {
+  background: var(--primary-brand);
+  border-radius: 2px;
+  color: var(--white);
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.project-year {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.project-action {
+  align-self: flex-start;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  color: var(--ink);
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.project-details.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* PERUBAHAN BOOTSTRAP: Override .navbar, .navbar-toggler, dan .nav-link untuk navbar responsive. */
+.site-header {
+  background: rgba(251, 250, 248, 0.96);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.navbar-toggler {
+  border: 1px solid var(--line);
+  border-radius: var(--card-radius);
+  padding: 7px 9px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: var(--focus-ring);
+}
+
+.navbar-toggler-icon {
+  height: 1.1em;
+  width: 1.1em;
+}
+
+.nav-links .nav-link {
+  color: var(--ink);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nav-links .nav-link:focus-visible,
+.button:focus-visible,
+.inline-link:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: 0;
+}
+
+/* PERUBAHAN BOOTSTRAP: Mempertahankan .row Bootstrap sebagai layout grid 12 kolom responsif. */
+.projects-grid.row {
+  display: flex;
+}
+
+.projects-grid > .project-item {
+  display: flex;
+}
+
+/* PERUBAHAN BOOTSTRAP: Override .form-floating, .input-group, .form-control, dan .form-select. */
+.contact-form .input-group {
+  align-items: stretch;
+}
+
+.contact-form .input-group > .form-floating {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.contact-form .input-group-text {
+  background: var(--surface-raised);
+  border-color: var(--charcoal);
+  border-width: 0 0 1px;
+  border-radius: 0;
+  color: var(--primary-brand);
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+  border-color: var(--charcoal);
+  border-radius: 0;
+}
+
+.contact-form .form-floating > .form-control,
+.contact-form .form-floating > .form-select {
+  height: 58px;
+  min-height: 58px;
+}
+
+.contact-form .form-floating > textarea.form-control {
+  height: 130px;
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+  border-color: var(--primary-brand);
+  box-shadow: var(--focus-ring);
+}
+
+.contact-form .input-group:focus-within .input-group-text {
+  border-color: var(--primary-brand);
+  color: var(--primary-hover);
+}
+
+.contact-form .form-check-input:checked {
+  background-color: var(--primary-brand);
+  border-color: var(--primary-brand);
+}
+
+.contact-form .form-check-input:focus {
+  border-color: var(--primary-brand);
+  box-shadow: var(--focus-ring);
+}
+
+/* PERUBAHAN BOOTSTRAP: Override .modal, .modal-content, .modal-title, dan .modal-header. */
+.modal-content {
+  background: var(--surface-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--card-radius);
+}
+
+.modal-title {
+  font: 600 32px/1 "Cormorant Garamond", serif;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: var(--line);
+}
+
+@media (max-width: 991.98px) {
+  /* PERUBAHAN BOOTSTRAP: Menata .navbar-collapse dan .navbar-nav setelah tombol hamburger dibuka. */
+  .nav-links {
+    align-items: stretch;
+    gap: 8px;
+    padding: 18px 0;
+  }
+
+  .nav-links li:nth-child(-n + 2) {
+    display: block;
+  }
+
+  .nav-links .nav-link {
+    padding: 8px 0;
+  }
+
+  .nav-cta {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* PERUBAHAN BOOTSTRAP: Menyesuaikan .row, .col, dan form agar satu kolom di ponsel. */
+  .form-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .projects-grid > .project-item {
+    width: 100%;
   }
 }
 
