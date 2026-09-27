@@ -9,6 +9,7 @@
 /* PERUBAHAN BOOTSTRAP: File ini adalah custom override yang dimuat setelah Bootstrap CSS. */
 :root {
   --paper: #fbfaf8;
+  --pink-50: #fff1f7;
   --white: #fff;
   --ink: #252326;
   --muted: #716d70;
@@ -24,7 +25,10 @@ html {
 }
 
 body {
-  background: var(--paper);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255, 176, 207, 0.4), transparent 20rem),
+    radial-gradient(circle at 90% 25%, rgba(255, 207, 226, 0.55), transparent 22rem),
+    linear-gradient(180deg, #fffafd 0%, var(--pink-50) 100%);
   color: var(--ink);
   font-family: "Manrope", sans-serif;
   line-height: 1.6;
