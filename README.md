@@ -122,15 +122,17 @@ Pengiriman form menggunakan `https://jsonplaceholder.typicode.com/posts` untuk d
 
 ## Profil Kinerja Jaringan
 
-`data/profile.json` saat ini mencatat sampel lokal saat reload pada 4 Oktober 2026: TTFB 1 ms dan FCP 112 ms. Nilai itu bukan cold/warm load GitHub Pages. Tabel berikut sengaja belum diisi sampai pengukuran aktual dilakukan di DevTools pada live deployment; hasil dapat berbeda menurut lokasi, koneksi, dan cache.
+`data/profile.json` mencatat sampel lokal saat reload pada 4 Oktober 2026: TTFB 1 ms dan FCP 112 ms. Tabel berikut mencatat pengukuran terpisah dari GitHub Pages; hasil dapat berbeda menurut lokasi, koneksi, dan cache. TTFB dan FCP cold load sudah dibaca dari DevTools.
 
 | Ukuran | Cold Load | Warm Load | Cara mencatat |
 | --- | --- | --- | --- |
-| TTFB dokumen utama | Belum diukur | Belum diukur | Network → pilih request `document` → Timing / Waiting for server response |
-| First Contentful Paint | Belum diukur | Belum diukur | Performance atau Lighthouse → FCP |
-| Ukuran transfer total | Belum diukur | Belum diukur | Network footer → transferred |
-| Status cache dokumen/CSS/JS/JSON | Belum diukur | Belum diukur | Catat status, `Cache-Control`, `ETag`, dan `Size` |
-| `304 Not Modified` | Belum diukur | Belum diukur | Bandingkan request saat cache aktif; 304 hanya dicatat bila benar-benar terlihat |
+| TTFB dokumen utama | 21,88 ms | 296,20 ms | GitHub Pages, DevTools Network → document → Timing → Waiting for server response |
+| First Contentful Paint | 324,2 ms | 272,3 ms | GitHub Pages, DevTools Performance → FCP timestamp |
+| Ukuran transfer total | 556 kB transferred; 980 kB resources | 886 B transferred; 980 kB resources | Network footer → transferred / resources |
+| Status HTTP dokumen utama | 200 OK | 304 Not Modified | GitHub Pages, Network → pilih request `document` → Headers |
+| Header cache dokumen utama | Belum dibaca | `Cache-Control: max-age=600`; `ETag: W/"6ac1e730-43e8"`; `X-Cache: HIT` | Response Headers pada request dokumen utama |
+| `304 Not Modified` | Tidak (dokumen 200 OK) | Ya (dokumen utama) | Catat hanya jika status tersebut terlihat pada request |
+| Status cache CSS/JS/JSON | CSS, JS, dan JSON: 200 OK | `style.css`, `app.js`, `api-service.js`, dan 3 JSON: 304; Bootstrap CSS/JS dan font: 200 dari disk cache | Network → periksa kolom Status/Size untuk tiap request |
 
 ### Prosedur Cold vs Warm Load
 
