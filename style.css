@@ -403,9 +403,11 @@ h2 em {
 }
 
 .record caption {
+  caption-side: top;
   color: var(--muted);
   font-size: 11px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  padding-bottom: 0;
   text-align: left;
 }
 
@@ -917,6 +919,828 @@ textarea {
 
   .projects-grid > .project-item {
     width: 100%;
+  }
+}
+
+/* WEEK 4: Styling untuk konten CSR yang dibuat oleh js/app.js. */
+.project-section-heading {
+  align-items: end;
+}
+
+.project-filters {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  justify-content: flex-end;
+  margin: -24px 0 30px;
+}
+
+.project-filters label {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.project-filters .form-select {
+  max-width: 240px;
+}
+
+.projects-grid.row,
+.skills-list.row {
+  display: flex;
+}
+
+.project-column {
+  display: flex;
+  min-width: 0;
+}
+
+.project-card {
+  position: relative;
+  width: 100%;
+}
+
+.project-visual {
+  aspect-ratio: 16 / 10;
+  min-height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-visual::after {
+  background: linear-gradient(180deg, rgba(31, 27, 30, 0.04), rgba(31, 27, 30, 0.38));
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+.project-image {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.project-visual-fallback {
+  background: linear-gradient(135deg, var(--rose-light), var(--gray));
+}
+
+.project-number {
+  position: absolute;
+  z-index: 1;
+}
+
+.project-number {
+  color: var(--white);
+  left: 18px;
+  top: 16px;
+}
+
+.project-details.card-body {
+  align-items: flex-start;
+}
+
+.project-details .project-year {
+  margin-bottom: 0;
+}
+
+.project-details .card-title {
+  width: 100%;
+}
+
+.project-tags {
+  margin: 4px 0 16px;
+}
+
+.project-tag {
+  background: #f3e9eb;
+  color: var(--primary-hover, #84515d);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.project-detail-button {
+  border-radius: 2px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.project-metrics {
+  color: var(--muted);
+  font-size: 13px;
+  padding-left: 20px;
+}
+
+.project-modal-image {
+  max-height: 320px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.empty-state {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--line);
+  border-radius: var(--card-radius, 4px);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.service-card:hover,
+.service-card:focus-within {
+  box-shadow: var(--shadow-lift, 0 16px 30px rgba(37, 35, 38, 0.12));
+  transform: translateY(-4px);
+}
+
+.service-card .card-title {
+  font: 600 28px/1.05 "Cormorant Garamond", serif;
+}
+
+.service-card .card-text,
+.service-features {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.service-features {
+  line-height: 1.8;
+  padding-left: 18px;
+}
+
+.service-price {
+  color: var(--primary-hover, #84515d);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.service-choose {
+  align-self: flex-start;
+  margin-top: 12px;
+}
+
+.skill-item {
+  border-left: 1px solid var(--line);
+  padding: 0 24px;
+}
+
+.skills-list > .col:first-child .skill-item {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.message-field {
+  height: 130px;
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 14px;
+}
+
+.order-history {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.toast-success .toast-header strong {
+  color: #58715a;
+}
+
+.toast-error .toast-header strong {
+  color: #9a3e49;
+}
+
+@media (max-width: 767.98px) {
+  .contact {
+    gap: 40px;
+    grid-template-columns: 1fr;
+  }
+
+  .project-filters {
+    align-items: stretch;
+    flex-direction: column;
+    margin-top: -18px;
+  }
+
+  .project-filters .form-select {
+    max-width: none;
+  }
+
+  .skills-list > .col .skill-item {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 20px 0 0;
+  }
+}
+
+/* WEEK 4 VISUAL DIRECTION: editorial portfolio inspired by the reference, with original content and assets. */
+:root {
+  --editorial-ink: #211b1f;
+  --editorial-rose: #df9eaf;
+  --editorial-blush: #f0d6dc;
+  --editorial-paper: #fffafd;
+}
+
+.site-header {
+  background: var(--editorial-paper);
+  border-bottom-color: rgba(33, 27, 31, 0.12);
+}
+
+.hero.section-shell {
+  align-items: stretch;
+  background: var(--editorial-ink);
+  color: var(--white);
+  display: grid;
+  gap: 7vw;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  margin: 0;
+  max-width: none;
+  min-height: 700px;
+  padding: 76px max(40px, calc((100% - 1120px) / 2));
+  width: 100%;
+}
+
+.hero-content {
+  align-self: center;
+  max-width: 590px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-tag,
+.section-label {
+  letter-spacing: 2.5px;
+}
+
+.hero-tag {
+  color: var(--editorial-rose);
+}
+
+.hero h1 {
+  font-size: 82px;
+  line-height: 0.88;
+  margin: 30px 0;
+}
+
+.hero h1 em {
+  color: var(--editorial-rose);
+}
+
+.hero-lead {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 14px;
+  max-width: 460px;
+}
+
+.hero .button-dark {
+  background: var(--editorial-rose);
+  color: var(--editorial-ink);
+}
+
+.hero .button-dark:hover {
+  background: var(--white);
+}
+
+.hero-intro {
+  align-self: center;
+  display: block;
+  min-height: 0;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+}
+
+.hero-copy {
+  color: var(--white);
+  max-width: 510px;
+  position: relative;
+}
+
+.hero-copy .intro-summary {
+  font-size: 25px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.hero-copy > p:not(.intro-summary) {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.hero-copy .inline-link {
+  color: var(--white);
+  margin-top: 12px;
+}
+
+.work.section-shell,
+.record.section-shell,
+.contact.section-shell {
+  padding-bottom: 112px;
+  padding-top: 112px;
+}
+
+.section-header h2,
+.contact h2 {
+  font-size: 68px;
+  line-height: 0.88;
+}
+
+.section-description {
+  max-width: 360px;
+}
+
+.project-card {
+  background: var(--editorial-ink);
+  border: 0;
+  border-radius: 0;
+  color: var(--white);
+}
+
+.project-card .card-title {
+  color: var(--white);
+  font-size: 30px;
+  line-height: 1;
+}
+
+.project-card .card-text {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.project-details.card-body {
+  min-height: 260px;
+  padding: 25px;
+}
+
+.project-year {
+  color: var(--editorial-rose);
+}
+
+.project-tag {
+  background: var(--editorial-blush);
+  color: var(--editorial-ink);
+  border-radius: 2px;
+  padding: 6px 9px;
+}
+
+.project-detail-button {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.55);
+  color: var(--white);
+}
+
+.project-detail-button:hover {
+  background: var(--editorial-rose);
+  border-color: var(--editorial-rose);
+  color: var(--editorial-ink);
+}
+
+.skills.section-shell,
+.services.section-shell {
+  max-width: none;
+  margin: 0;
+  padding: 104px max(40px, calc((100% - 1120px) / 2));
+  width: 100%;
+}
+
+.skills.section-shell {
+  background: transparent;
+}
+
+.skills h2 em {
+  color: #7e3f56;
+}
+
+.skills-list > .col .skill-item {
+  border-color: rgba(33, 27, 31, 0.22);
+}
+
+.services.section-shell {
+  background: var(--editorial-ink);
+  color: var(--white);
+}
+
+.services .section-label {
+  color: var(--editorial-rose);
+}
+
+.services .section-description {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+/* WEEK 4: Service cards are data-driven; typography matches the project cards. */
+.service-card {
+  background: var(--editorial-paper);
+  border: 0;
+  border-radius: 0;
+  color: var(--editorial-ink);
+  min-height: 0;
+}
+
+.service-card .card-title {
+  color: #34434f;
+  font-family: "Manrope", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.service-card .card-text,
+.service-card .service-features {
+  color: #616c72;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.service-price {
+  color: #84515d;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.service-choose {
+  border-color: var(--editorial-ink);
+  color: var(--editorial-ink);
+}
+
+/* VISUAL UPDATE: The record table shares the page gradient instead of a separate panel. */
+.record.section-shell {
+  background: transparent;
+}
+
+.contact.section-shell {
+  border-top-color: rgba(33, 27, 31, 0.18);
+}
+
+.modal-content {
+  border-radius: 10px;
+}
+
+@media (max-width: 991.98px) {
+  .hero.section-shell {
+    gap: 42px;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .hero h1 {
+    font-size: 66px;
+  }
+
+}
+
+@media (max-width: 767.98px) {
+  .hero.section-shell {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    padding: 64px 24px;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .work.section-shell,
+  .record.section-shell,
+  .contact.section-shell {
+    padding-bottom: 76px;
+    padding-top: 76px;
+  }
+
+  .skills.section-shell,
+  .services.section-shell {
+    padding: 76px 24px;
+  }
+
+  .section-header h2,
+  .contact h2 {
+    font-size: 54px;
+  }
+
+  .project-details.card-body {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section-header h2,
+  .contact h2 {
+    font-size: 46px;
+  }
+
+  .project-details.card-body {
+    min-height: 220px;
+    padding: 20px;
+  }
+}
+
+/* Project card typography follows the supplied script-eyebrow and rounded-title reference. */
+.project-card .card-title {
+  color: #34434f;
+  display: block;
+  font-family: "Manrope", sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.08;
+  margin: 7px 0 10px;
+}
+
+.project-title-lead {
+  font-weight: 800;
+}
+
+.project-title-rest {
+  font-weight: 600;
+}
+
+.project-card {
+  background: #f7f7f5;
+  border: 1px solid rgba(43, 53, 60, 0.1);
+  border-radius: 10px;
+  color: #34434f;
+}
+
+.project-card .card-text {
+  color: #616c72;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.55;
+  text-transform: none;
+}
+
+.project-details .project-year {
+  color: #7b858a;
+  font-family: "Manrope", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.project-details .project-eyebrow {
+  color: #c66f91;
+  font-family: "Caveat", cursive;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 4px 0 0;
+  text-transform: none;
+}
+
+.project-tag {
+  background: #e7e9e8;
+  border-radius: 5px;
+  color: #4b5960;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 5px 9px;
+}
+
+.project-detail-button {
+  border-color: #56636a;
+  border-radius: 5px;
+  color: #3c4a50;
+}
+
+.project-detail-button:hover {
+  background: #34434f;
+  border-color: #34434f;
+  color: #fff;
+}
+
+.projects-grid.row {
+  gap: 0;
+}
+
+.project-year {
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: none;
+}
+
+.modal-title {
+  color: #34434f;
+  font-family: "Manrope", sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.modal-body {
+  color: #616c72;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.modal-body .modal-project-description {
+  color: #616c72;
+}
+
+.modal-body .h6 {
+  color: #34434f;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.modal-body .project-metrics {
+  color: #616c72;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* VISUAL UPDATE: Homepage hero pairs the introduction with the profile card. */
+.hero.section-shell {
+  align-items: center;
+  background: transparent;
+  color: var(--ink);
+  display: grid;
+  gap: clamp(32px, 6vw, 76px);
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.7fr);
+  margin: 0 auto;
+  max-width: 1120px;
+  min-height: 600px;
+  padding: 48px 0 56px;
+  width: min(1120px, calc(100% - 80px));
+  scroll-margin-top: 100px;
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.hero h1 {
+  font-size: 82px;
+  line-height: 0.9;
+  margin: 30px 0;
+}
+
+.hero-lead {
+  color: var(--muted);
+  max-width: 660px;
+}
+
+.hero .button-dark {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.hero .button-dark:hover {
+  background: var(--charcoal);
+}
+
+/* WEEK 4: Profile details and photo are populated from profile.json and a local asset. */
+.profile-card {
+  align-self: center;
+  background: #f7f7f5;
+  border: 1px solid rgba(43, 53, 60, 0.09);
+  border-radius: 16px;
+  box-shadow: 0 14px 36px rgba(43, 53, 60, 0.1);
+  color: #34434f;
+  justify-self: end;
+  max-width: 360px;
+  overflow: hidden;
+  padding: 16px;
+  width: 100%;
+}
+
+.profile-photo-frame {
+  aspect-ratio: 1 / 1;
+  background: #e9e8e4;
+  border-radius: 11px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.profile-photo-frame img {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center 35%;
+  position: absolute;
+  width: 100%;
+}
+
+.profile-photo-fallback {
+  align-items: center;
+  background: linear-gradient(145deg, #ead5da, #cbb9bf);
+  color: #fffafd;
+  display: flex;
+  font: 600 72px/1 "Cormorant Garamond", serif;
+  height: 100%;
+  justify-content: center;
+}
+
+.profile-photo-fallback[hidden] {
+  display: none;
+}
+
+.profile-card-details {
+  padding: 16px 4px 5px;
+}
+
+.profile-card-details h2 {
+  color: #303b41;
+  font: 800 19px/1.2 "Manrope", sans-serif;
+  margin: 0;
+}
+
+.profile-card-program {
+  color: #858d90;
+  font-size: 11px;
+  margin: 4px 0 13px;
+}
+
+.profile-card-info {
+  align-items: center;
+  color: #4b565c;
+  display: flex;
+  font-size: 12px;
+  gap: 9px;
+  margin-top: 9px;
+  overflow-wrap: anywhere;
+}
+
+.profile-card-info i {
+  color: #969d9f;
+  font-size: 14px;
+  width: 16px;
+}
+
+.profile-card-info[href]:hover {
+  color: #a35778;
+}
+
+@media (max-width: 575.98px) {
+  .project-card .card-title {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .hero.section-shell {
+    grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.75fr);
+    gap: 30px;
+  }
+
+  .hero h1 {
+    font-size: 68px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero.section-shell {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 54px 24px 64px;
+    width: 100%;
+  }
+
+  .profile-card {
+    justify-self: start;
+    max-width: 420px;
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero h1 {
+    font-size: 48px;
   }
 }
 

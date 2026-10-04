@@ -1,0 +1,26 @@
+[
+  {
+    "id": "uiux-starter",
+    "title": "UI/UX Discovery",
+    "category": "UI / UX Design",
+    "priceLabel": "Harga menyesuaikan ruang lingkup proyek",
+    "description": "Pemetaan awal kebutuhan dan alur pengalaman pengguna.",
+    "features": ["Diskusi kebutuhan", "User flow", "Rekomendasi awal"]
+  },
+  {
+    "id": "prototype-design",
+    "title": "Product Prototype",
+    "category": "UI / UX Design",
+    "priceLabel": "Harga menyesuaikan ruang lingkup proyek",
+    "description": "Rancangan antarmuka dan prototype interaktif untuk menguji ide produk.",
+    "features": ["Wireframe", "UI prototype", "Satu sesi review"]
+  },
+  {
+    "id": "web-build",
+    "title": "Responsive Web Build",
+    "category": "Web Development",
+    "priceLabel": "Harga menyesuaikan ruang lingkup proyek",
+    "description": "Implementasi website responsif berdasarkan kebutuhan dan ruang lingkup proyek.",
+    "features": ["HTML, CSS, JavaScript", "Responsive layout", "Deployment statis"]
+  }
+]

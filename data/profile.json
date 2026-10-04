@@ -1,0 +1,32 @@
+{
+  "name": "Joice Anastasya Napitupulu",
+  "photo": "./foto.saya.jpeg",
+  "email": "jooiceans@gmail.com",
+  "nim": "12S24020",
+  "class": "13SI1",
+  "program": "Sarjana Sistem Informasi",
+  "institution": "Institut Teknologi Del",
+  "lead": "Saya Joice Anastasya Napitupulu, mahasiswa Sistem Informasi Institut Teknologi Del yang tertarik pada software engineering, UI/UX, dan produk digital berbasis AI.",
+  "summary": "Saya membangun produk digital yang tidak hanya fungsional, tetapi juga intuitif, relevan, dan memberi dampak nyata.",
+  "about": "Saya memiliki pengalaman dalam Java, JavaScript, Next.js, Tailwind CSS, UI/UX research, wireframing, prototyping, dan integrasi AI. Saya menggabungkan kemampuan teknis dengan design thinking untuk merancang solusi digital yang berorientasi pada pengguna.",
+  "tagline": "Building thoughtful digital experiences with empathy, strategy, and code.",
+  "skills": [
+    {
+      "title": "UI / UX Design",
+      "description": "Wireframing, prototyping, user interviews, product thinking, dan design system untuk solusi yang intuitif."
+    },
+    {
+      "title": "Web Development",
+      "description": "JavaScript, HTML, CSS, Next.js, dan Tailwind CSS untuk membangun website modern dan responsif."
+    },
+    {
+      "title": "AI & Product Mindset",
+      "description": "Integrasi AI, data scraping, rekomendasi berbasis kebutuhan pengguna, dan problem-solving produk."
+    }
+  ],
+  "performanceProfile": {
+    "ttfbMs": 1,
+    "fcpMs": 112,
+    "note": "Diukur 2026-10-04 melalui Performance API pada http://localhost:5501/ saat navigasi reload. Ini bukan cold-load atau pengukuran GitHub Pages; hasil dapat berubah sesuai server, cache, dan koneksi."
+  }
+}
